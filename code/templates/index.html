@@ -5,6 +5,12 @@
   </head>
   <body>
     <h1>Hot Posts</h1>
+    <h1>Enter Some Text</h1>
+    <form action="/submit" method="post">
+        <label for="text">Text:</label>
+        <input type="text" id="text" name="text">
+        <input type="submit" value="Submit">
+    </form>
     <ul>
       {% for post in posts %}
         <li>{{ post }}</li>
