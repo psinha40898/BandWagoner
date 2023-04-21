@@ -32,7 +32,7 @@ def isWord_sen(word, sentence, i, indices):
         print("The word", word, "was found in comment index", i+1)
         indices.append(i)
 
-def isWord(word, list, indices):
+def isWord(word, list, indices): #If this word is found in any element of this list, put the index in indices
     for i, comment in enumerate(list):
         isWord_sen(word, list[i], i, indices)
 
