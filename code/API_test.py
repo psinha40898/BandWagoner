@@ -1,14 +1,49 @@
 import praw
+from pmaw import PushshiftAPI
+import time
+
 # import SA_test
 # Creates an instance of Reddit
 reddit = praw.Reddit(client_id='sPNq5pCTFiTsVjiIlYCSmw', 
                      client_secret='LNKS63p0vFfaR896JB5zhTTa7fI8aw', 
                      user_agent='This is a just a test by /u/acamess9298')
 
-# subreddit is an attribute of the Reddit class
-subreddit = reddit.subreddit('Dota2')
+# subreddit is an attribute of the Reddit classp
+subreddit = reddit.subreddit('MMA')
+author = "Stanklord500"
+
+#START PMAW TEST
+# *******
+# api = PushshiftAPI()
+
+# print("START")
+# start_time = time.time()
+
+# # Search for comments by the author in the subreddit
+# comments = api.search_comments(q= "Jones", subreddit="MMA", limit = 5)
+# comment_list = [c for c in comments]
+# print("LOOP STARTING")
+# # Print the comments
+# for comment in comment_list:
+#     print(comment["body"])
+
+# end_time = time.time()
+
+# execution_time = end_time - start_time
+
+# print("Execution time:", execution_time)
+
+#END PMAW TEST
+# ****************
+
+
+
 # this needs to be fed from user input
-target_user = 'Stanklord500'
+# target_user = 'Stanklord500'
+# query = "Jones"
+
+# for comment in reddit.subreddit("MMA").search("jones", sort = 'comments'):
+#     print(comment.selftext)
 
 def topSub(x, reddit_var, sub_var):
     print("***Success! Testing Subreddit Top Post API call with limit of ", x, "***")
@@ -41,8 +76,43 @@ def printIndices(indices_list, original_list):
         print( "#", i+1, "overall comment #", indices_list[i], "START",  original_list[indices_list[i]], "END")
     print("This function worked!")
 
+def search(reddit_var, user_var, word):
+    comments, urls = recentComments(None, reddit_var, user_var)
+    indices = []
+    isWord(word, comments, indices)
+    printIndices(indices, comments)
+    return comments, urls, indices
+
+# START PRAW TEST
+# *********
+
+# print("START")
+# start_time = time.time()
+# target_user = "Stanklord500"
 
 
+# for comment in subreddit.comments(limit=None):
+#     print("one iteration")
+#     if comment.author == 'peezduhk':
+#         print(comment.body)
+
+# comments = []
+# urls = []
+# indices = []
+# comments, urls, indices = search(reddit, target_user, "Gane") 
+
+
+
+
+# end_time = time.time()
+
+# execution_time = end_time - start_time
+
+# print("Execution time:", execution_time)
+
+
+#END PRAW TEST
+# *************
 # topSub(10, reddit, subreddit) # Test 1
 # comments, urls = recentComments(1500, reddit, target_user)
 # my_indices = []

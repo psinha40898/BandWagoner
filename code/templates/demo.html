@@ -24,7 +24,7 @@
     </style>
 </head>
 
-<body>
+<body class = "has-background-light">
     <section class="hero is-fullheight is-default is-bold">
         <div class="hero-head">
             <nav class="navbar">
@@ -61,7 +61,7 @@
                 <div class="columns is-vcentered">
                     <div class="column is-5">
                         <figure class="image is-4by3">
-                            <img src="Example.JPG" alt="Description">
+                            <img src="{{ url_for('static', filename='Example.JPG') }}" alt="Description">
                         </figure>
                     </div>
                     <div class="column is-6 is-offset-1">
@@ -95,7 +95,7 @@
                           
                             <div class="field">
                               <div class="control">
-                                <input class="button is-primary" type="submit" value = "Submit">
+                                <input class="button is-black" type="submit" value = "Submit">
                                 
                               </div>
                             </div>
@@ -105,22 +105,26 @@
                     
                       <hr>
                       
-                      <div class = "box">
-                      <ul>
-                        {% for post in posts %}
-                        <div class = "content">
-                          <li>{{ loop.index }}:    {{ post }}</li>
-                          </div>
-                          <hr>
-                        {% endfor %}
-                      </ul>
-                      </div>
+                
                       
                     </div>
                 </div>
             </div>
+            
         </div>
+        <div class = "container box is-centered has-background-white border-black" style = "border: 2px solid black; border-radius: 4px;">
+            
+                     
+            {% for post in posts %}
+            <div class = "content">
+              
+              <p class ="has-text-left has-text-weight-medium has-text-white"> <p class = "has-text-weight-bold">{{ loop.index }}:</p> <span class = "has-text-weight-bold">"</span>   {{ post }} <span class = "has-text-weight-bold">"</span> </p>
 
+              </div>
+              <hr class = "has-background-black">
+            {% endfor %}
+          
+          </div>
         <div class="hero-foot">
             <div class="container">
                 <div class="tabs is-centered">
