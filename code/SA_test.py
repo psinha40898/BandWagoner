@@ -71,9 +71,9 @@ def preprocess(text):
 #each string and float corresponds to one line in the table of data
 def sentiment_AnalysisPT(text):
     SAmatches = []
-
+#implement error checking on the comment length
     text = preprocess(text)
-    encoded_input = tokenizer(text, return_tensors='pt')
+    encoded_input = tokenizer(text, max_length=511, return_tensors='pt')
     output = model(**encoded_input)
     scores = output[0][0].detach().numpy()
     scores = softmax(scores)
