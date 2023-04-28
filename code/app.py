@@ -7,7 +7,7 @@ app = Flask(__name__)
 text = ""
 @app.route('/') #This is the function that is run when the home page is visited 
 def home():
-    return render_template('demo.html') 
+    return render_template('demo2.html') 
 
 @app.route('/submit', methods=['POST']) #This is the function that is run when the /submit page is visited
 def submit():
@@ -15,6 +15,7 @@ def submit():
     indices = []
     matches = []
     urls = []
+    toplabels = []
     # SAword = str()
     SAlistoflists = []
     text = request.form['text']
@@ -32,12 +33,14 @@ def submit():
         print("**Test 5: RUNNING SENTIMENT ANALYSIS ON A COMMENT**")
         for i, _ in enumerate(matches):
             print("Sentiment for Comment #", i, ": ")
-            SAlistoflists.append(SA_test.sentiment_AnalysisPT(matches[i]))
+            entirethinglist, justthelabel = SA_test.sentiment_AnalysisPT(matches[i])
+            SAlistoflists.append(entirethinglist)
+            toplabels.append(justthelabel)
             # SAword = SA_test.sentiment_AnalysisPT(matches[i])
             # SAlistoflists.append(SAword)
 
     print(SAlistoflists)
-    return render_template('demo.html', posts=matches, SAlist = SAlistoflists) + text2
+    return render_template('demo2.html', posts=matches, SAlist = SAlistoflists, labels = toplabels) + text2
 
 
 if __name__ == '__main__':

@@ -66,8 +66,12 @@ def preprocess(text):
     return " ".join(new_text)
 
 # END OF GOOD DOCUMENTATION
+
+#returns a list of strings and a list of floats
+#each string and float corresponds to one line in the table of data
 def sentiment_AnalysisPT(text):
     SAmatches = []
+
     text = preprocess(text)
     encoded_input = tokenizer(text, return_tensors='pt')
     output = model(**encoded_input)
@@ -75,14 +79,27 @@ def sentiment_AnalysisPT(text):
     scores = softmax(scores)
     ranking = np.argsort(scores)
     ranking = ranking[::-1]
+    toplabel = labels[ranking[0]]
     for i in range(scores.shape[0]):
         l = labels[ranking[i]]
         s = scores[ranking[i]]
         print(f"{i+1}) {l} {np.round(float(s), 4)}")
         SAmatches.append(f"{i+1}) {l} {np.round(float(s), 4)}")
-    return SAmatches
+   
+    print("The top label is", toplabel)
+    return SAmatches, toplabel
 
-# sentiment_AnalysisPT("Really good night!")
+phrase, label = sentiment_AnalysisPT("Really good night!")
+
+print(phrase)
+print(label)
+
+if label == 'negative':
+    print("yes it is bad")
+
+
+# print(phrase[0])
+# print(phrase[1])
 # sentiment_AnalysisPT("You suck. I hate you.")
 # sentiment_AnalysisPT("Really good night!")
 
