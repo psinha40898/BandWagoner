@@ -15,17 +15,29 @@ def submit():
     indices = []
     matches = []
     urls = []
+    # SAword = str()
+    SAlistoflists = []
     text = request.form['text']
     text2 = request.form['text2']
+    found = True
     their_comments, urls, indices = API_test.search(API_test.reddit, text, text2)
     for i in range(len(indices)):
         matches.append(their_comments[indices[i]])
     
-    print("**Test 5: RUNNING SENTIMENT ANALYSIS ON A COMMENT**")
-    for i, _ in enumerate(matches):
-        print("Sentiment for Comment #", i, ": ")
-        SA_test.sentiment_AnalysisPT(matches[i])
-    return render_template('demo.html', posts=matches) + text2
+    if not matches:
+        found = False
+        matches.append(their_comments[0])
+    
+    if found:
+        print("**Test 5: RUNNING SENTIMENT ANALYSIS ON A COMMENT**")
+        for i, _ in enumerate(matches):
+            print("Sentiment for Comment #", i, ": ")
+            SAlistoflists.append(SA_test.sentiment_AnalysisPT(matches[i]))
+            # SAword = SA_test.sentiment_AnalysisPT(matches[i])
+            # SAlistoflists.append(SAword)
+
+    print(SAlistoflists)
+    return render_template('demo.html', posts=matches, SAlist = SAlistoflists) + text2
 
 
 if __name__ == '__main__':

@@ -6,8 +6,7 @@ from scipy.special import softmax
 import csv
 import urllib.request
 
-# Preprocess text (username and link placeholders)
-# Replaces usernames with just "user" and replaces links with just "http"
+
 
 
 
@@ -53,6 +52,9 @@ tokenizer.save_pretrained(MODEL)
 # output = model(**encoded_input)
 # scores = output[0][0].detach().numpy()
 # scores = softmax(scores)
+
+# Preprocess text (username and link placeholders)
+# Replaces usernames with just "user" and replaces links with just "http"
 def preprocess(text):
     new_text = []
  
@@ -63,8 +65,9 @@ def preprocess(text):
         new_text.append(t)
     return " ".join(new_text)
 
-
+# END OF GOOD DOCUMENTATION
 def sentiment_AnalysisPT(text):
+    SAmatches = []
     text = preprocess(text)
     encoded_input = tokenizer(text, return_tensors='pt')
     output = model(**encoded_input)
@@ -76,6 +79,8 @@ def sentiment_AnalysisPT(text):
         l = labels[ranking[i]]
         s = scores[ranking[i]]
         print(f"{i+1}) {l} {np.round(float(s), 4)}")
+        SAmatches.append(f"{i+1}) {l} {np.round(float(s), 4)}")
+    return SAmatches
 
 # sentiment_AnalysisPT("Really good night!")
 # sentiment_AnalysisPT("You suck. I hate you.")

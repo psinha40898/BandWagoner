@@ -1,4 +1,5 @@
 import praw
+import prawcore
 from pmaw import PushshiftAPI
 import time
 
@@ -55,11 +56,21 @@ def recentComments(x, reddit_var, user_var):
     print("***Success! Testing Reddit User Recent Comments API call with limit of", x ,"***")
     comment_history = []
     comment_urls = []
-    for i, comment in enumerate(reddit_var.redditor(user_var).comments.new(limit=x)):
-        comment_history.append(comment.body)
-        comment_urls.append(comment.permalink)
-    print("***End of test -- comments and urls stored successfully***")
+    try:
+        for i, comment in enumerate(reddit_var.redditor(user_var).comments.new(limit=x)):
+            comment_history.append(comment.body)
+            comment_urls.append(comment.permalink)
+        print("***End of test -- comments and urls stored successfully***")
+        return comment_history, comment_urls
+    except prawcore.exceptions.NotFound as e:
+        if e.response.status_code == 404:
+            print("shit ain't real bro")
+        else:
+            print("some fookin error man", e)
+    comment_history.append("No comments for invalid username")
+    comment_urls.append("www. f u rself . com")
     return comment_history, comment_urls
+
 
 
 def isWord_sen(word, sentence, i, indices):
