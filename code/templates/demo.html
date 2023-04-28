@@ -113,12 +113,21 @@
             
         </div>
         <div class = "container box is-centered has-background-white border-black" style = "border: 2px solid black; border-radius: 4px;">
+
+
+
+
+
+
+
+
+
             
                      
             {% for i in range(posts|length) %}
             <div class = "content">
               
-              <p class ="has-text-left has-text-weight-medium has-text-white"> <p class = "has-text-weight-bold">{{ loop.index }}:</p> <span class = "has-text-weight-bold">"</span> {{ SAlist[i] }}  {{ posts[i] }} <span class = "has-text-weight-bold">"</span> </p>
+              <p class ="has-text-left has-text-weight-medium has-text-white"> <p class = "has-text-weight-bold">{{ loop.index }}:</p> <p class = "has-text-weight-bold"> {{ SAlist[i] }} </p><span class = "has-text-weight-bold">"</span> {{ posts[i] }} <span class = "has-text-weight-bold">"</span> </p>
 
               </div>
               <hr class = "has-background-black">
