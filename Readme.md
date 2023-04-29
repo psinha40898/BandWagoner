@@ -34,7 +34,7 @@
 ### Model
 - API_test.py and SA_test.py serve as the model that manipulates and utilizes the data from API call
 - API_test.py makes calls to the Reddit API and organizes the data for usage in this application
-- SA_test.py utilizes Cardiff University's RoBERTa model (a variation of the BERT model utilizing Transformer architecture)
+- SA_test.py utilizes Cardiff University's implementation of a RoBERTa model (a variation of the BERT model utilizing Transformer architecture)
 ### View
 - The index.html HTML rendered through Flask in app.py serves as the view
 ### Controller
