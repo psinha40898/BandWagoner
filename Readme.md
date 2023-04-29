@@ -1,5 +1,5 @@
 # Bandwagoner (title)
-## Search a reddit user's comments across all subreddits with Sentiment Analysis
+## Applies a trained artificial intelligence model to perform sentiment analysis any reddit user with optional filters
 ## Skills Applied
 
 - Model View Controller Paradigm
