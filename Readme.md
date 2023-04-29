@@ -9,7 +9,7 @@
 - Built with Python, HTML, and CSS, through Flask and Bootstrap.
 
 
-## Example
+## Example Images
 
 ## Enter a reddit Username and a Phrase to search for
 ![Alt Text](./readmeimages/1.JPG)
