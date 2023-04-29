@@ -12,9 +12,9 @@
 ## Example
 
 ## Enter a reddit Username and a Phrase to search for
-![Alt Text](./readmeimages/1.jpg)
+![Alt Text](./readmeimages/1.JPG)
 ## Sleek list of comments returned
-![Alt Text](./readmeimages/2.jpg)
+![Alt Text](./readmeimages/2.JPG)
 ## Mouseover Corresponds to Sentiment
 ### exact sentiment data also shown in text format
 ## Green for Positive
