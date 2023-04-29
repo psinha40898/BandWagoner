@@ -45,7 +45,7 @@
 
 ## Citations
 - CardiffNLP (2021). Twitter RoBERTa Base Sentiment Model. Hugging Face's Transformers. Available at: https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest. 
-- Reddit API (PRAW). Version 7.4.0. Accessed on October 1, 2022. Available from https://praw.readthedocs.io/en/stable/
+- Reddit API (PRAW). Version 7.4.0. Available from https://praw.readthedocs.io/en/stable/
 - Read about the transformer architecture:
 - Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., & Polosukhin, I. (2017). Attention is all you need. In Advances in neural information processing systems (pp. 5998-6008).
 -  Read about BERT:
