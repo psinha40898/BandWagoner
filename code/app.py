@@ -3,7 +3,7 @@ import SA_test
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
-
+print("starting")
 text = ""
 @app.route('/') #This is the function that is run when the home page is visited 
 def home():
