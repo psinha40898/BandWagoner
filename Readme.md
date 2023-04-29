@@ -18,17 +18,17 @@
 ![Alt Text](./readmeimages/2.JPG)
 ## Mouseover Utilizes Neural Network Results to  Correspond to Sentiment/Mood of the Author
 - exact sentiment data also shown in text format
-## Green for Positive
+### Green for Positive
 ![Alt Text](./readmeimages/3.jpg)
-## Yellow for Neutral
+### Yellow for Neutral
 ![Alt Text](./readmeimages/4.jpg)
-## Red for Negative
+### Red for Negative
 ![Alt Text](./readmeimages/5.jpg)
 
 ## How to use
-- Fork the repo
-- Use pip install -r requirements.txt
-- create praw.ini with your client_id, client_secret, and user_agent in your working directory (wherever your virtual environment is, if using VScode)
+# Fork the repo
+# Use pip install -r requirements.txt
+# create praw.ini with your client_id, client_secret, and user_agent in your working directory (wherever your virtual environment is, if using VScode)
 
 
 
