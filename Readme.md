@@ -15,10 +15,9 @@
 #### The sentiment of each comment will be analyzed by a neural network. It will be represented graphically and in text
 ## Sleek list of comments returned
 ## Mouseover Utilizes Neural Network Results to  Correspond to Sentiment/Mood of the Author
-- exact sentiment data also shown in text format
-### Green for Positive
-### Yellow for Neutral
-### Red for Negative
+#### exact sentiment data also shown in text format
+### Green for Positive, Yellow for Neutral, Red for Negative
+
 ![Alt Text](./readmeimages/demo.gif)
 
 ## How to use
