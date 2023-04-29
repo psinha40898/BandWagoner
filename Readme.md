@@ -12,11 +12,13 @@
 ## Example Images
 
 ## Enter a reddit Username and a Phrase to search for
+## The sentiment of each comment will be analyzed by a neural network
+- will be represented graphically and in text
 ![Alt Text](./readmeimages/1.JPG)
 ## Sleek list of comments returned
 ![Alt Text](./readmeimages/2.JPG)
-## Mouseover Corresponds to Sentiment
-### exact sentiment data also shown in text format
+## Mouseover Utilizes Neural Network Results to  Correspond to Sentiment/Mood of the Author
+- exact sentiment data also shown in text format
 ## Green for Positive
 ![Alt Text](./readmeimages/3.jpg)
 ## Yellow for Neutral
