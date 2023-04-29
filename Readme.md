@@ -24,6 +24,10 @@
 ## Red for Negative
 ![Alt Text](./readmeimages/5.jpg)
 
+## How to use
+- Fork the repo
+- Use pip install -r requirements.txt
+- create praw.ini with your client_id, client_secret, and user_agent in your working directory (wherever your virtual environment is, if using VScode)
 
 
 

@@ -1,17 +1,26 @@
 import praw
 import prawcore
-from pmaw import PushshiftAPI
+import configparser
 import time
+config = configparser.ConfigParser()
+config.read('praw.ini')
+print(config['bot1']['client_id'])
+print(config['bot1']['client_secret'])
+print(config['bot1']['user_agent'])
 
 # import SA_test
 # Creates an instance of Reddit
-reddit = praw.Reddit(client_id='sPNq5pCTFiTsVjiIlYCSmw', 
-                     client_secret='LNKS63p0vFfaR896JB5zhTTa7fI8aw', 
-                     user_agent='This is a just a test by /u/acamess9298')
+# reddit = praw.Reddit(client_id='sPNq5pCTFiTsVjiIlYCSmw', 
+#                      client_secret='LNKS63p0vFfaR896JB5zhTTa7fI8aw', 
+#                      user_agent='This is a just a test by /u/acamess9298')
 
+
+reddit = praw.Reddit(client_id=config['bot1']['client_id'],
+                      client_secret=config['bot1']['client_secret'],
+                      user_agent=config['bot1']['user_agent'])
 # subreddit is an attribute of the Reddit classp
-subreddit = reddit.subreddit('MMA')
-author = "Stanklord500"
+# subreddit = reddit.subreddit('MMA')
+# author = "Stanklord500"
 
 #START PMAW TEST
 # *******
