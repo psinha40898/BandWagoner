@@ -11,8 +11,8 @@
 
 ## Example Images
 
-## Enter a reddit Username and a Phrase to search for
-## The sentiment of each comment will be analyzed by a neural network
+### Enter a reddit Username and a Phrase to search for
+#### The sentiment of each comment will be analyzed by a neural network
 - will be represented graphically and in text
 ![Alt Text](./readmeimages/1.JPG)
 ## Sleek list of comments returned
