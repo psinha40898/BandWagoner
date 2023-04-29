@@ -26,10 +26,6 @@
 ### create praw.ini with your client_id, client_secret, and user_agent in your working directory (wherever your virtual environment is, if using VScode)
 
 
-
-
-
-
 ## Model View Controller
 ### Model
 - API_test.py and SA_test.py serve as the model that manipulates and utilizes the data from API call
