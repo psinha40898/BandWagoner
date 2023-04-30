@@ -1,5 +1,5 @@
 # Bandwagoner (title)
-## Applies a trained artificial intelligence model to perform sentiment analysis any reddit user with optional filters
+## Applies a trained artificial intelligence model to perform sentiment analysis on any reddit user with optional filters
 ## Skills Applied
 
 - Model View Controller Paradigm
