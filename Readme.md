@@ -9,7 +9,7 @@
 - Built with Python, HTML, and CSS, through Flask and Bootstrap.
 
 
-## Example Images
+## Example
 
 ### Enter a reddit Username and a Phrase to search for
 #### The sentiment of each comment will be analyzed by a neural network. It will be represented graphically and in text
