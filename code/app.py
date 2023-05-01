@@ -2,7 +2,8 @@ import API_test
 import SA_test
 from flask import Flask, render_template, request
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='website/templates', static_folder='website/static')
+
 print("starting")
 text = ""
 @app.route('/') #This is the function that is run when the home page is visited 
