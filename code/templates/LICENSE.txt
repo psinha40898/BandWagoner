@@ -1,3 +1,4 @@
+This license applies to HTML CSS and Javascript code in this directory.
 The MIT License (MIT)
 
 Copyright (c) 2013-2023 Start Bootstrap LLC
