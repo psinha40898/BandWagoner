@@ -1,4 +1,4 @@
-# Bandwagoner (title)
+# Bandwagoner 
 ## Applies a trained artificial intelligence model to perform sentiment analysis on any reddit user with optional filters
 ## Skills Applied
 
