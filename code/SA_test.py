@@ -1,6 +1,6 @@
 from transformers import AutoModelForSequenceClassification
 from transformers import TFAutoModelForSequenceClassification
-from transformers import AutoTokenizer
+from transformers import AutoTokenizer, AutoConfig
 import numpy as np
 from scipy.special import softmax
 import csv
@@ -17,11 +17,13 @@ import urllib.request
 # 1 Makes the code more portable
 # 2 Stores String that will be cache directory and also specifies a location in the Transformers Library from Huggingface
 task='sentiment' 
-MODEL = f"cardiffnlp/twitter-roberta-base-{task}" 
+# MODEL = f"cardiffnlp/twitter-roberta-base-{task}" 
+MODEL = f"cardiffnlp/twitter-xlm-roberta-base-sentiment"
 
 # Loads tokenizer from Huggingface Transformers Library into tokenizer
 # MODEL specifies a location in the Transformers Library from Huggingface
 tokenizer = AutoTokenizer.from_pretrained(MODEL) 
+config = AutoConfig.from_pretrained(MODEL)
 
 
 # 1 Creates an empty list named labels
@@ -30,12 +32,12 @@ tokenizer = AutoTokenizer.from_pretrained(MODEL)
 # 4 The contents of the URL are split by new lines and put into html which is a list of those strings
 # 5 The contents of html are put into a CSV table called csvreader
 # 6 The second column of the table is put into labels (negative, neutral, positive)
-labels=[] # 1
-mapping_link = f"https://raw.githubusercontent.com/cardiffnlp/tweeteval/main/datasets/{task}/mapping.txt" 
-with urllib.request.urlopen(mapping_link) as f: 
-    html = f.read().decode('utf-8').split("\n") 
-    csvreader = csv.reader(html, delimiter='\t') 
-labels = [row[1] for row in csvreader if len(row) > 1] # 6
+# labels=[] # 1
+# mapping_link = f"https://raw.githubusercontent.com/cardiffnlp/tweeteval/main/datasets/{task}/mapping.txt" 
+# with urllib.request.urlopen(mapping_link) as f: 
+#     html = f.read().decode('utf-8').split("\n") 
+#     csvreader = csv.reader(html, delimiter='\t') 
+# labels = [row[1] for row in csvreader if len(row) > 1] # 6
 
 
 
@@ -79,9 +81,9 @@ def sentiment_AnalysisPT(text):
     scores = softmax(scores)
     ranking = np.argsort(scores)
     ranking = ranking[::-1]
-    toplabel = labels[ranking[0]]
+    toplabel = l = config.id2label[ranking[0]]
     for i in range(scores.shape[0]):
-        l = labels[ranking[i]]
+        l = config.id2label[ranking[i]]
         s = scores[ranking[i]]
         print(f"{i+1}) {l} {np.round(float(s), 4)}")
         SAmatches.append(f"{i+1}) {l} {np.round(float(s), 4)}")
@@ -89,19 +91,19 @@ def sentiment_AnalysisPT(text):
     print("The top label is", toplabel)
     return SAmatches, toplabel
 
-phrase, label = sentiment_AnalysisPT("Really good night!")
+# phrase, label = sentiment_AnalysisPT("Really good night!")
 
-print(phrase)
-print(label)
+# print(phrase)
+# print(label)
 
-if label == 'negative':
-    print("yes it is bad")
+# if label == 'negative':
+#     print("yes it is bad")
 
 
 # print(phrase[0])
 # print(phrase[1])
-# sentiment_AnalysisPT("You suck. I hate you.")
-# sentiment_AnalysisPT("Really good night!")
+sentiment_AnalysisPT("Alright buddy and Conor Mcgregor could beat Francis Ngannou. Gtfo here")
+
 
 
 
