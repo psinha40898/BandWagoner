@@ -176,7 +176,7 @@
                     {% for i in range(posts|length) %}
                         {% if labels[i] == 'negative' %}
                     <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!">
+                        <a class="portfolio-item" href="{{ hyperlinks[i] }}" target="_blank">
                           
                             <div class="caption NEG">
                                 <div class="caption-content text-dark font-weight-bold">
@@ -191,7 +191,7 @@
                     </div>
                         {% elif labels[i] == 'positive' %}
                     <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!">
+                        <a class="portfolio-item" href="{{ hyperlinks[i] }}" target="_blank">
                           
                             <div class="caption POS">
                                 <div class="caption-content text-dark font-weight-bold">
@@ -206,7 +206,7 @@
                     </div>
                         {% else %}
                     <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!">
+                        <a class="portfolio-item" href="{{ hyperlinks[i] }}" target="_blank">
                           
                             <div class="caption NEU">
                                 <div class="caption-content text-dark font-weight-bold">
